@@ -7,17 +7,9 @@ env ETCD_LISTEN_PEER_URLS=http://${IP}:2380
 #env ETCD_ADVERTISE_CLIENT_URLS=http://${IP}:2379
 #env ETCD_NAME=$HOSTNAME
 
-env NAME=$HOSTNAME
-env NODE1NAME=ubuntu
-env NODE1IP=10.2.242.114
-env NODE1NAME=ubuntu2
-env NODE1IP=10.2.242.224
-env NODE1NAME=ubuntu3
-env NODE1IP=10.2.242.138
-
 env DATADIR="/var/dtank/etcd"
 
-
+/usr/local/bin/run-etcd \
 -name $HOSTNAME \
   -discovery $DISCOVERY \
  -advertise-client-urls http://${IP}:2379,http://${IP}:4001 \
