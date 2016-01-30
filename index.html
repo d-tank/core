@@ -22,17 +22,23 @@
       <h3>
 <a id="welcome-to-dtank" class="anchor" href="#welcome-to-dtank" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>welcome to dtank</h3>
 
-<p>Welcome to dtank. Dtank is a rapidly deployable, distributed, fault-tolerant file storage system.</p>
+<p>dtank is a rapidly deployable, distributed, fault-tolerant, software-defined storage system.</p>
 
 <h3>
-<a id="Qu'est-ce que Dtank?" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Qu'est-ce que Dtank?</h3>
+<a id="Qu'est-ce que Dtank?" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What's a Dtank?</h3>
 
-<p>Dtank is based primarily on <a href="https://moosefs.com">MooseFS</a>, but has been adapted to run inside of <a href="https://docker.com">Docker</a> virtual machine containers [with persistent storage on a Docker host's local storage, leveraging <a href="https://coreos.com/etcd/">etcd</a> for distributed management of many nodes.</p>
+<p>Dtank is an implementation of MooseFS running in Docker containers, it leverages etcd and confd for easy management, communication, and metric retrieval for all the moving parts.  Dtank's goal is to make it easy for you to combine spare disk space from workstations and servers running Mac OS X / BSD, Linux, or Windows into a centralised pool of storage space that's got inherent failover.  Learn more.</p>
 
 <h3>
-<a id="uh...huh..." class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>uh...huh...</h3>
+<a id="uh...huh..." class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What kind of failover?</h3>
 
-<p>D-Tank is also the name of a viral bioweapon that ultimately forms the crux of the 2004 feature film Appleseed. For years I thought it was the name of the massive mech that shows up in the film's second half - but it's not, that's the UDM Prototype BQ3. D'oh. It's pretty bad-ass. Dtank was chosen as a name as the system is distrubuted, uses container technology, and aims to hold all yo' data. Dtank totally doesn't want to kill you.</p>
+<p>By combining MooseFS's replication and data tiering with etcd/confd for on-the-fly changes to configuration, and painless rapid deployment in Docker, there's a lot of elasticity when it comes to designing - and changing - your data storage layout.</p>
+
+<p>For a home user, two or three old computers running dtank are a much cheaper alternative to running a NAS appliance - when you need more storage, you simply add another drive and tell dtank about it.</p>
+
+<p>For a business, dtank can scale-out over as many disks, servers, and datacenters as you like.</p>
+
+<p>In both cases, the easily configurable replication and tiering aspects mean that your storage can be reshaped to facilitate a different purpose extremely easily.</p>
 
 <h3>
 <a id="How can I use it?" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How can I use it?</h3>
