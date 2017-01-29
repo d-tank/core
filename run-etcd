@@ -9,7 +9,7 @@ env ETCD_LISTEN_PEER_URLS=http://${IP}:2380
 
 env DATADIR="/var/dtank/etcd"
 
-/usr/local/bin/etcd \
+#/usr/local/bin/etcd \
 -name $HOSTNAME \
   -discovery $DISCOVERY \
  -advertise-client-urls http://${IP}:2379,http://${IP}:4001 \
