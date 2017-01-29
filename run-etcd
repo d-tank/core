@@ -1,7 +1,7 @@
 #env ETCD_INITIAL_CLUSTER="etcd-01=http://10.2.242.114:2380,etcd-02=http://10.2.242.224:2380,etcd-03=http://10.2.242.138:2380"
 #env ETCD_INITIAL_CLUSTER_STATE="new"
 #env ETCD_INITIAL_CLUSTER_TOKEN="etcd-cluster-01"
-env ETCD_LISTEN_PEER_URLS=http://$(facter ipaddress):2380
+env ETCD_LISTEN_PEER_URLS=http://${IP}:2380
 ###env ETCD_INITIAL_ADVERTISE_PEER_URLS=http://${IP}:2380
 #env ETCD_LISTEN_CLIENT_URLS=http://${IP}:2379
 #env ETCD_ADVERTISE_CLIENT_URLS=http://${IP}:2379
@@ -12,9 +12,9 @@ env DATADIR="/var/dtank/etcd"
 /usr/bin/etcd \
 -name $HOSTNAME \
   -discovery $DISCOVERY \
- -advertise-client-urls http://$(facter ipaddress):2379,http://$(facter ipaddress):4001 \
+ -advertise-client-urls http://${IP}:2379,http://${IP}:4001 \
  -listen-client-urls http://0.0.0.0:2379,http://0.0.0.0:4001 \
- -initial-advertise-peer-urls http://$(facter ipaddress):2380 \
+ -initial-advertise-peer-urls http://${IP}:2380 \
  -listen-peer-urls http://0.0.0.0:2380 \
  -initial-cluster-token dtank-etcd-cluster-1 \
  -initial-cluster-state new
